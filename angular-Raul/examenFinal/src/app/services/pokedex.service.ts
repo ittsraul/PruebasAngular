@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PokedexService {
-  private url: string = "https://pokeapi.co/api/v2/pokemon/";
+  private url: string = "https://pokeapi.co/api/v2/pokemon";
 
   getPokemon(name: string){
     return this.http.get(`${this.url}/${name}`);
