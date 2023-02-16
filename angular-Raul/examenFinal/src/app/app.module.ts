@@ -13,6 +13,8 @@ import { CaracteristicasComponent } from './views/caracteristicas/caracteristica
 import { PokemonComponent } from './views/pokemon/pokemon.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ContentComponent } from './components/content/content.component';
+import {MatCardModule} from '@angular/material/card';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ContentComponent } from './components/content/content.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
