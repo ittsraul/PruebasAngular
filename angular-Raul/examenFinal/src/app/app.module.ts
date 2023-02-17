@@ -11,10 +11,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CaracteristicasComponent } from './views/caracteristicas/caracteristicas.component';
 import { PokemonComponent } from './views/pokemon/pokemon.component';
-import { HttpClientModule } from '@angular/common/http';
+
 import { ContentComponent } from './components/content/content.component';
 import {MatCardModule} from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { StarwarsComponent } from './views/starwars/starwars.component';
+import { FormStarwComponent } from './components/form-starw/form-starw.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     CaracteristicasComponent,
     PokemonComponent,
-    ContentComponent
+    ContentComponent,
+    StarwarsComponent,
+    FormStarwComponent
   ],
   imports: [
     BrowserModule,
