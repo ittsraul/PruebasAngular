@@ -1,0 +1,81 @@
+<div class="container">
+    <header class="blog-header lh-1 py-3">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-12 text-center">
+          <h1 class="blog-header-logo text-dark">Actividades de repaso de Angular</h1>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <main class="container">
+
+      <div class="col-md-12">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary">Repaso directivas</strong>
+            <h3 class="mb-0">Ejercicio 1</h3>
+            <div class="mb-1 text-muted">Evento click</div>
+            <p class="card-text mb-auto">Al hacer click que cambie al siguiente bloque.</p>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="https://images.unsplash.com/photo-1616036740257-9449ea1f6605?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3Vuc2V0JTIwYmVhY2h8ZW58MHx8MHx8&w=1000&q=80" width="200" height="250" alt="">
+          </div>
+        </div>
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary">Repaso directivas</strong>
+            <h3 class="mb-0">Ejercicio 2</h3>
+            <div class="mb-1 text-muted">Evento click</div>
+            <p class="card-text mb-auto">Al hacer click que cambie al siguiente bloque.</p>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="https://media.istockphoto.com/id/1172427455/es/foto/hermosa-puesta-de-sol-sobre-el-mar-tropical.jpg?s=612x612&w=0&k=20&c=q48rq3n3xFFwv0ihyYG8j-3MmrKwTWhGhT8isczbzh8=" width="200" height="250" alt="">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/sunset-quotes-21-1586531574.jpg?crop=1.00xw:0.752xh;0,0.0601xh&resize=1200:*" width="200" height="250" alt="">
+            <img src="https://images.unsplash.com/photo-1616036740257-9449ea1f6605?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3Vuc2V0JTIwYmVhY2h8ZW58MHx8MHx8&w=1000&q=80" width="200" height="250" alt="">
+          </div>
+        </div>
+
+      </div>
+
+      <div style="display: flex;">
+        <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary">Repaso directivas</strong>
+            <h3 class="mb-0">Ejercicio 3</h3>
+            <div class="mb-1 text-muted">Evento click</div>
+            <p class="card-text mb-auto">Al hacer click que cambie al primer bloque.</p>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="https://images.photowall.com/products/42745/beautiful-sunset.jpg?h=699&q=85" width="200" height="250" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary">Repaso directivas</strong>
+            <h3 class="mb-0">Ejercicio 4</h3>
+            <div class="mb-1 text-muted">Evento click</div>
+            <p class="card-text mb-auto" *ngIf="!isYellowBackground" (click)="changeColor()">Al hacer click que cambie al color del fondo de este bloque a amarillo.</p>
+
+            <ng-template *ngIf="isYellowBackground" #yellowBackground>
+              <p class="card-text mb-auto yellow-background">Al hacer click que cambie al color del fondo de este bloque a amarillo.</p>
+            </ng-template>
+            
+            
+            <p class="card-text mb-auto">Al hacer click que cambie al primer bloque.</p>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/sunset-quotes-21-1586531574.jpg?crop=1.00xw:0.752xh;0,0.0601xh&resize=1200:*" width="200" height="250" alt="">
+          </div>
+        </div>
+      </div>
+      
+    </div>
+      
+
+
+  </main>
+
