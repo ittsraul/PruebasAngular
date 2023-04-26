@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { HomeComponent } from './components/home/home.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { HomeComponent } from './layout/home/home.component';
 import { ArticleListComponent } from './article/article-list/article-list.component';
 import { ArticleFormComponent } from './article/article-form/article-form.component';
 import { ArticleComponent } from './article/directivas/article.component';

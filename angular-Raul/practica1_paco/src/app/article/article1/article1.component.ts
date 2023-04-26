@@ -25,25 +25,35 @@ export class Article1Component {
   
   // The container of paragraphs
   public paragraphs :string[] = [
-     "texto uno bla bla bla",
-     "texto dos bla bla bla",
-     "texto tres bla bla bla",
-     "texto cuatro bla bla bla"
-  ];
-  public contador1 :number = 0;
-  public contador2 :number = 0;
-  public contador3 :number = 0;
-  public contador4 :number = 0;
+    "texto uno bla bla bla",
+    "texto dos bla bla bla",
+    "texto tres bla bla bla",
+    "texto cuatro bla bla bla"
+ ];
+ public contador1 :number = 0;
+ public contador2 :number = 0;
+ public contador3 :number = 0;
+ public contador4 :number = 0;
 
-  public currentImage :number = 0;
+ public currentImage :number = 0;
 
-  
-  changeParraf1(){
-    this.contador1++;
-    if (this.contador1 > 3) {
-      this.contador1 = 0;
-    }
-  }
+/*
+
+EXPLICACIÓN PARA HECTOR
+
+public texto1 :string = "rfge4rtg";
+
+ changeText1() : void {
+  this.texto1 = "fdhusujdfujnds";
+ }
+
+*/   
+ changeParraf1(){
+   this.contador1++;
+   if (this.contador1 > 3) {
+     this.contador1 = 0;
+   }
+ }
   
   changeParraf2(){
     this.contador4++;
