@@ -13,7 +13,7 @@ import { CaracteristicasComponent } from './views/caracteristicas/caracteristica
 import { PokemonComponent } from './views/pokemon/pokemon.component';
 
 import { ContentComponent } from './components/content/content.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from './components/matcard/matcard.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { StarwarsComponent } from './views/starwars/starwars.component';
@@ -32,7 +32,8 @@ import { FormStarwComponent } from './components/form-starw/form-starw.component
     PokemonComponent,
     ContentComponent,
     StarwarsComponent,
-    FormStarwComponent
+    FormStarwComponent,
+    MatCardModule
   ],
   imports: [
     BrowserModule,

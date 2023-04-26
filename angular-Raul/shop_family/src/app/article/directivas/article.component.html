@@ -1,0 +1,8 @@
+<h2 class="text-center mb-5 ">Recorrer lista</h2>
+
+<div *ngFor="let article of articles; let i=index">
+    <!-- <ng-container *ngIf="i === 0">
+        <p>{{ article }}</p>
+    </ng-container> -->
+    <li class="text-center">{{article}}</li>
+</div>
