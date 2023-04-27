@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 import { Article } from '../article.model';
+import { ArticleService } from '../article.service';
 
 @Component({
   selector: 'app-article-list',
@@ -13,25 +14,38 @@ export class ArticleListComponent implements OnInit {
   modo?: string; 
 
   //constructor
-  constructor(private router: Router, private route:ActivatedRoute){}
+  constructor(private router: Router, private route:ActivatedRoute, private articuloService: ArticleService){}
 
 
   //when is initialized
   ngOnInit() :void {
-    this.getArticles();
-    this.articulos = this.getArticles();
+    this.GetParams();
+    this.getArticlesApi();
   }
 
-  private getArticles() : Article[] {
-    const articlesToReturn: Article[] = [];
-    throw new Error('Method not implemented.');
+  //get articles of my endpoints
+  private getArticlesApi(){
+    this.articuloService.getArticlesApi().subscribe(
+      (data) => {
+      data.forEach( (article) => {
+        const articleIncludes: Article = new Article(article.id, article.name, article.image, article.price);
+        this.articulos.push(articleIncludes);
+      })
+    })
   }
+
+  private GetArticles(){
+    this.articulos = this.articuloService.getArticles();
+  }
+
 
   private GetParams() :void{
     this.modo = (this.route.snapshot.queryParamMap.get("modo") ?? undefined);
   }
 
   public navegarArticulo(idArticulo: number) :void{
-    this.router.navigate(['article-list', idArticulo]);
+    this.router.navigate(['articulo-ficha', idArticulo]);
   }
+
+  
 }

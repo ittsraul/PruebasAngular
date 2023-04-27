@@ -1,1 +1,4 @@
-<p>article-list works!</p>
+<h2 class="text-uppercase text-center">lista de articulos</h2>
+
+<app-article-card *ngFor="let article of articulos" [article]="article" [textoBoton]="'Ver Articulo'" (click)="navegarArticulo($event)"></app-article-card>
+

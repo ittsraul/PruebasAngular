@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xl-3 col-lg-3 display-inline-block">
+            <mat-card class="example-card" *ngIf="article">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>{{article.getName()}}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image [src]="article.getImage()" class="card-img-top" alt="Photo of {{article.getName()}}">
+                <mat-card-content>
+                  <p>
+                    {{article.getPrice()}}
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button (click)="onClick()">{{textoBoton}}</button>
+                  <button mat-button>WISHLIST</button>
+                  <button mat-button>BUY</button>
+                </mat-card-actions>
+              </mat-card>
+        </div>
+    </div>
+</div>
