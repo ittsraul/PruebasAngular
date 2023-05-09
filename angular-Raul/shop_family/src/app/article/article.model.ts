@@ -2,6 +2,7 @@ export class Article{
     private id: number;
     private name: string;
     private image: string;
+    public description: string;
     private price: number;
 
     public getId(): number {
@@ -28,6 +29,15 @@ export class Article{
         this.image = image;
     }
 
+    public getDescription(): string {
+        return this.description;
+    }
+
+    public setDescription(description: string): void {
+        this.description = description;
+    }
+
+
     public getPrice(): number {
         return this.price;
     }
@@ -38,12 +48,14 @@ export class Article{
   constructor(
     id: number,
     name: string, 
-    image: string, 
+    image: string,
+    description: string, 
     price: number
 ) {
     this.id = id
     this.name = name
     this.image = image
+    this.description = description
     this.price = price
   }    
 }

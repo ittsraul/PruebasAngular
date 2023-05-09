@@ -17,7 +17,9 @@ export class ArticleCardComponent {
 
   }
 
-  public onClick() :void{
-    this.click.emit(this.article?.getId());
+  @Output() view: EventEmitter<number> = new EventEmitter<number>();
+
+  public onView(): void {
+    this.view.emit(this.article?.getId());
   }
 }

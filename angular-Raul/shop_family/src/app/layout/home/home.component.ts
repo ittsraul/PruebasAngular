@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   image: Carrousel[] = [];
   currentImageIndex = 0;
   banners: Carrousel[] = [];
+  Categories: Carrousel[] = [];
 
   constructor(private carrouselService: CarrouselService) {}
 
@@ -23,6 +24,11 @@ export class HomeComponent implements OnInit {
     this.carrouselService.getTresbanners().subscribe((banners: Carrousel[]) => {
       if (banners.length > 0) { 
         this.banners = banners; 
+      }
+    });
+    this.carrouselService.getCategories().subscribe((Categories: Carrousel[]) => {
+      if (Categories.length > 0) { 
+        this.Categories = Categories; 
       }
     });
     

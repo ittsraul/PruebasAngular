@@ -6,14 +6,40 @@
 </div>
 <div class="container-fluid mt-5 mb-5">
     <div class="row">
-      <div class="col-xl-4 banner" [ngStyle]="{'background-image': 'url(' + banners[0].image + ')'}">
-        <h2>Woman Shirts</h2>
-      </div>
-      <div class="col-xl-4 banner" [ngStyle]="{'background-image': 'url(' + banners[1].image + ')'}">
-        <h2>Men Shirts</h2>
-      </div>
-      <div class="col-xl-4 banner" [ngStyle]="{'background-image': 'url(' + banners[2].image + ')'}">
-        <h2>Floral shirts</h2>
-      </div>
+        <div class="col-xl-4 banner" [ngStyle]="{'background-image': 'url(' + banners[0].image + ')'}">
+            <a href="" class="text-center text-uppercase">Woman Shirts</a>
+        </div>
+        <div class="col-xl-4 banner" [ngStyle]="{'background-image': 'url(' + banners[1].image + ')'}">
+            <a href="" class="text-center text-uppercase">Men Shirts</a>
+        </div>
+        <div class="col-xl-4 banner" [ngStyle]="{'background-image': 'url(' + banners[2].image + ')'}">
+            <a href="" class="text-center text-uppercase">Floral shirts</a>
+        </div>
     </div>
-  </div>
+</div>
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <h1 class="text-center text-uppercase mt-5 mb-5">Shop by category</h1>
+        <div class="col-xl-3" >
+            <div class="card category" [ngStyle]="{'background-image': 'url(' + Categories[0].image + ')'}">
+                <a href="/articulo" class="text-center text-uppercase" >Tshirt</a>
+            </div>
+           
+        </div>
+        <div class="col-xl-3 ">
+            <div class="card category" [ngStyle]="{'background-image': 'url(' + Categories[1].image + ')'}">
+                <a href="/articulo" class="text-center text-uppercase">Botas</a>
+            </div>
+        </div>
+        <div class="col-xl-3 ">
+            <div class="card category" [ngStyle]="{'background-image': 'url(' + Categories[2].image + ')'}">
+                <a href="/articulo" class="text-center text-uppercase">Otro</a>
+            </div>
+        </div>
+        <div class="col-xl-3">
+            <div class="card category" [ngStyle]="{'background-image': 'url(' + Categories[3].image + ')'}">
+                <a href="/articulo" class="text-center text-uppercase">Otro</a>
+            </div>
+        </div>
+    </div>
+</div>

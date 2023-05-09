@@ -12,6 +12,7 @@ import { ArticleComponent } from './article/directivas/article.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ArticleCardComponent } from './article/article-card/article-card.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ArticleDetailComponent } from './article/article-detail/article-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     ArticleListComponent,
     ArticleFormComponent,
     ArticleComponent,
-    ArticleCardComponent
+    ArticleCardComponent,
+    ArticleDetailComponent
   ],
   imports: [
     BrowserModule,

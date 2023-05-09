@@ -3,15 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { ArticleComponent } from './article/directivas/article.component';
 import { ArticleListComponent } from './article/article-list/article-list.component';
 import { ArticleFormComponent } from './article/article-form/article-form.component';
-import { ArticleCardComponent } from './article/article-card/article-card.component';
 import { HomeComponent } from './layout/home/home.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent},
-  {path: 'list', component: ArticleListComponent },
+  {path: 'articulo', component: ArticleListComponent },
   { path: 'directivas', component: ArticleComponent },
-  { path: 'carrito', loadChildren: () => import('./carrito/carrito.module').then(m => m.CarritoModule) }, 
-  { path: 'catalogo', loadChildren: () => import('./catalogo/catalogo.module').then(m => m.CatalogoModule) },
+  { path: 'carrito', loadChildren: () => import('./carrito/carrito.module').then(m => m.CarritoModule) },
   { path: 'articulo-ficha/:idArticulo', component: ArticleFormComponent}
 ];
 

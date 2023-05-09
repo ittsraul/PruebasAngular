@@ -1,4 +1,10 @@
 <h2 class="text-uppercase text-center">lista de articulos</h2>
 
-<app-article-card *ngFor="let article of articulos" [article]="article" [textoBoton]="'Ver Articulo'" (click)="navegarArticulo($event)"></app-article-card>
-
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-xl-3 col-lg-3"*ngFor="let article of articulos" >
+            <app-article-card [article]="article" [textoBoton]="'Ver Articulo'"
+                (click)="navegarArticulo($event)"></app-article-card>
+        </div>
+    </div>
+</div>
