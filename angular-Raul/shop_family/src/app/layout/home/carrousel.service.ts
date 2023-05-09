@@ -8,9 +8,14 @@ import { Carrousel } from './Carrousel';
 export class CarrouselService {
 
   constructor(private http: HttpClient) { }
-  carrouselJumbo = "http://localhost:8000/carrousel";
+  carrouselJumbo = "http://localhost:3001/carrousel";
+  tresbanners = "http://localhost:3001/tresbanners";
 
   public getCarrousel(): Observable<Carrousel[]>{
     return this.http.get<Carrousel[]>(this.carrouselJumbo);
+  }
+
+  public getTresbanners(): Observable<Carrousel[]>{
+    return this.http.get<Carrousel[]>(this.tresbanners);
   }
 }

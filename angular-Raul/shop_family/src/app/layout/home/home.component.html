@@ -1,1 +1,19 @@
-<p>home works!</p>
+<div class="jumbotron jumbotron-fluid text-center"
+    [ngStyle]="{'background-image': 'url(' + image[currentImageIndex].image + ')'}">
+    <h1 class="text-white text-uppercase mt-5">Estás en la mejor tienda del mundo</h1>
+    <button (click)="siguiente()">Siguiente</button>
+    <button (click)="anterior()">Anterior</button>
+</div>
+<div class="container-fluid mt-5 mb-5">
+    <div class="row">
+      <div class="col-xl-4 banner" [ngStyle]="{'background-image': 'url(' + banners[0].image + ')'}">
+        <h2>Woman Shirts</h2>
+      </div>
+      <div class="col-xl-4 banner" [ngStyle]="{'background-image': 'url(' + banners[1].image + ')'}">
+        <h2>Men Shirts</h2>
+      </div>
+      <div class="col-xl-4 banner" [ngStyle]="{'background-image': 'url(' + banners[2].image + ')'}">
+        <h2>Floral shirts</h2>
+      </div>
+    </div>
+  </div>
