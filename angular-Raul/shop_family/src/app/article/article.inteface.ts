@@ -4,5 +4,6 @@ export interface ArticleInteface {
     image: string;
     description: string;
     price: number;
+    oldPrice: number;
 
 }

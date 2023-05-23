@@ -1,0 +1,11 @@
+.discounted {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
+  .discounted::after {
+    content: "";
+    display: inline-block;
+    margin-left: 8px;
+    color: red;
+  }

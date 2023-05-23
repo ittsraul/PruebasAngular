@@ -11,8 +11,11 @@
     </small>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button (click)="onView()">{{textoBoton}}</button>
-    <button mat-button>WISHLIST</button>
+    <button mat-button [routerLink]="['/articulo-ficha/', article.getId()]">{{textoBoton}}</button>
+    <button mat-button (click)="onClickFavorite()">
+      <ng-container *ngIf="isFavorite; else addFavorite">REMOVE FAVORITE</ng-container>
+      <ng-template #addFavorite>ADD FAVORITE</ng-template>
+    </button>
     <button mat-button>BUY</button>
   </mat-card-actions>
 </mat-card>

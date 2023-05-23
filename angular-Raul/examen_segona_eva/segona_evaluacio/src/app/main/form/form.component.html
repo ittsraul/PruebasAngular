@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12" style="display: flex; align-items: center; justify-content: center" *ngIf="showForm">
+            <form class="form" (ngSubmit)="OnSubmit()">
+                <div class="answer-bank">
+                    <div class="answer">
+                        <input type="text" name="name" id="name" value="" class="form-control" [(ngModel)]="name"
+                            placeholder="type" />
+                    </div>
+                    <div class="answer">
+                        <input type="submit" value="Enviar" class="primary" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

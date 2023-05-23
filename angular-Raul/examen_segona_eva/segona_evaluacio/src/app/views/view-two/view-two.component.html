@@ -1,0 +1,5 @@
+<app-form (FindCharacter)="FindCharacter($event)"></app-form>
+
+<div *ngFor="let item of director">
+    {{item.title}} || {{item.director}} || {{item.starships[0]}}
+</div>

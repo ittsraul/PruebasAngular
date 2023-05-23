@@ -4,6 +4,7 @@ export class Article{
     private image: string;
     public description: string;
     private price: number;
+    private oldPrice: number;
 
     public getId(): number {
         return this.id;
@@ -45,17 +46,27 @@ export class Article{
     public setPrice(price: number): void {
         this.price = price;
     }
+
+    public getOldPrice(): number {
+        return this.oldPrice;
+    }
+
+    public setOldPrice(oldPrice: number): void {
+        this.oldPrice = oldPrice;
+    }
   constructor(
     id: number,
     name: string, 
     image: string,
     description: string, 
-    price: number
+    price: number,
+    oldPrice: number
 ) {
     this.id = id
     this.name = name
     this.image = image
     this.description = description
     this.price = price
+    this.oldPrice = oldPrice
   }    
 }

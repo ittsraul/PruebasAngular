@@ -1,0 +1,21 @@
+<main>
+    <form class="form" (submit)="changeView($event)">
+      <label class="label">Inserta qué vista quieres ver</label>
+      <input class="form-control" type="text" name="route" id="route" [(ngModel)]="viewRoute">
+      <button type="submit">Mostrar vista</button>
+    </form>
+    
+    <app-one *ngIf="viewRoute === 'one'" (ChangeTitleFunction)="handleChangeTitle(currentTitle)"
+             (ChangeParagraph1)="handleChangeParagraph1(currentParagraph1)"
+             (ChangeParagraph2)="handleChangeParagraph2(currentParagraph2)"
+             (ChangeParagraph3)="handleChangeParagraph3(currentParagraph3)"
+             (ChangePhoto)="handleChangePhoto(currentImage)">
+    </app-one>
+    
+    <app-two *ngIf="viewRoute === 'two'" (TitleFunction)="handle2ChangeTitle(current2Title)"
+             (Paragraph1)="handle2ChangeParagraph1(current2Paragraph1)"
+             (Paragraph2)="handle2ChangeParagraph2(current2Paragraph2)"
+             (Paragraph3)="handle2ChangeParagraph3(current2Paragraph3)"
+             (Photo)="handle2ChangePhoto(currentImage)">
+    </app-two>
+  </main>

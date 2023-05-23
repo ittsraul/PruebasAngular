@@ -1,13 +1,12 @@
-<!-- <app-article-card *ngFor="let article of articles" [article]="article" (view)="onViewArticle($event)"></app-article-card> -->
 <div class="container">
-    <div class="row">
-      <div class="col-xl-6">
-        <img [src]="articleDetail.getImage()" alt="Imagen del artículo">
-      </div>
-      <div class="col-xl-6">
-        <h1>{{ articleDetail.getTitle() }}</h1>
-        <p>{{ articleDetail.getSize() }}</p>
-        <p>{{ articleDetail.getPrice() }}</p>
-      </div>
+  <div class="row">
+    <div class="col-xl-6">
+      <img [src]="articleDetail.image" alt="Imagen del artículo">
+    </div>
+    <div class="col-xl-6">
+      <h1>{{ articleDetail.title }}</h1>
+      <p>{{ articleDetail.size }}</p>
+      <p>{{ articleDetail.price }}</p>
     </div>
   </div>
+</div>

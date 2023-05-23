@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: 'articulo', component: ArticleListComponent },
   { path: 'directivas', component: ArticleComponent },
   { path: 'carrito', loadChildren: () => import('./carrito/carrito.module').then(m => m.CarritoModule) },
-  { path: 'articulo-ficha/:idArticulo', component: ArticleFormComponent}
+  { path: 'articulo-ficha/:id', component: ArticleFormComponent}
 ];
 
 @NgModule({

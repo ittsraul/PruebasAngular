@@ -28,7 +28,7 @@ export class ArticleListComponent implements OnInit {
     this.articuloService.getArticlesApi().subscribe(
       (data) => {
       data.forEach( (article) => {
-        const articleIncludes: Article = new Article(article.id, article.name, article.image, article.description, article.price);
+        const articleIncludes: Article = new Article(article.id, article.name, article.image, article.description, article.price, article.oldPrice);
         this.articulos.push(articleIncludes);
       })
     })
