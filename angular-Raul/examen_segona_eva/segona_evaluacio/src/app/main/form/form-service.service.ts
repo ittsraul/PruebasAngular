@@ -12,20 +12,20 @@ export class FormServiceService {
 
   constructor(private http :HttpClient) { }
 
-  apiUrl = "http//swapi.dev/api/people/?search=";
+  apiUrl :string = "https://swapi.dev/api/people/?search=";
 
   /* Get Characters */
   getCharacter(characterName :string) :Observable<Characters>{
-    return this.http.get<Characters>(this.apiUrl);
+    return this.http.get<Characters>(this.apiUrl + characterName);
   } 
 
   /* Get Films */
   getFilms(film : string) :Observable<Films>{
-    return this.http.get<Films>(this.apiUrl);
+    return this.http.get<Films>(film);
   }
 
   /* Get Ships */
   getStarShips(ships :string) :Observable<StarShips> {
-    return this.http.get<StarShips>(this.apiUrl);
+    return this.http.get<StarShips>(ships);
   }
 }

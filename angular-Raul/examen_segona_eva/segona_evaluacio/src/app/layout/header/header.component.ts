@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
- numVista: string= "1";
+/*  numVista: string= "1";
 
  public changeView(dir: string) :void{
   if (dir==="/one") {
@@ -15,6 +15,11 @@ export class HeaderComponent {
   }if(dir==="two") {
     this.numVista = "2";
   }
- }
+ } */
 
+ currentView :string = "one";
+
+ changeView(view: string) {
+  this.currentView = view;
+}
 }

@@ -101,8 +101,6 @@ a {
   list-style: none;
   }
   
-  
-  
   .photo {
   border: 1px solid #5495ff;
   width: 25%;
@@ -132,12 +130,13 @@ a {
   }
   
   .photo .image-container2 img {
-  width: 31%;
+  width: 48%;
   }
   
   .photo .image-container3 img {
-  width: 48%;
+  width: 31%;
   }
+  
   
   .photo .caption {
   font-style: italic;
@@ -184,21 +183,7 @@ a {
     text-align: center;
     text-transform: uppercase;
   }
-
-  .banner-one {
-    background-image: url("https://static.eldiario.es/clip/0a1ee554-bcf7-4c32-9c2a-37e76297ef6f_16-9-discover-aspect-ratio_default_0.jpg");
-    background-position: center top;
-    background-size: cover;
-    border-bottom: 1px solid #dddddd;
-    height: 700px;
-    position: relative;
-    text-align: center;
-    top: 100px;
-    width: 100%;
-  }
-  
-  .banner-two {
-    background-image: url('https://cdn.pixabay.com/photo/2016/03/27/07/26/darth-vader-1282288_640.jpg');
+  .banner{
     background-position: center top;
     background-size: cover;
     border-bottom: 1px solid #dddddd;

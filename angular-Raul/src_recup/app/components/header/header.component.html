@@ -1,0 +1,42 @@
+<div *ngIf ="cambio; then bloque2 else bloque1"></div>
+
+
+<ng-template #bloque1>
+    <div class="navigation">
+        <form method="post" (ngSubmit)="changeViews()"  action="#">
+          <input type="text" name="Name" [(ngModel)]="name" />
+        </form>
+      </div>
+    
+      <div class="banner" style="background-image: url('https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2021/06/rick-morty-2381623.jpg?tf=3840x');">
+        <div class="banner-text">
+          <h2 [routerLink]="['viewTwo']">Vista 2</h2>
+        </div>
+      </div>
+    
+      <div class="content">
+      </div>
+</ng-template>
+
+
+<ng-template #bloque2>
+    <div class="navigation">
+        <form method="post" (ngSubmit)="changeViews()"  action="#">
+            <input type="text" name="Name" [(ngModel)]="name" />
+        </form>
+      </div>
+    
+      <div class="banner" style="background-image: url('https://static.eldiario.es/clip/0a1ee554-bcf7-4c32-9c2a-37e76297ef6f_16-9-discover-aspect-ratio_default_0.jpg')">
+        <div class="banner-text">
+          <h2 [routerLink]="['viewOne']">Vista 1</h2>
+        </div>
+      </div>
+    
+      <div class="content">
+      </div>
+</ng-template>
+
+  <!-- 
+    Imagen de Rick & Morty para Header:
+    <img src="https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2021/06/rick-morty-2381623.jpg?tf=3840x">
+  -->

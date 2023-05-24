@@ -1,0 +1,25 @@
+<div [ngSwitch]="type">
+    <div *ngSwitchCase='"one"' class="photo">
+        <div class="{{clase}}">
+            <img *ngFor = "let item of image" (click)="changeSize($event)"src="{{item}}">
+        </div>
+        <span class="caption">{{ text }}</span>
+    </div>
+<div *ngSwitchCase='"two"' class="photo">
+    <div class="image-container2">
+        <div *ngFor="let item of resp">
+            <img src="{{item.image}}" />
+            <p>{{item.name}}</p>
+        </div>
+      <img *ngIf="mostrarPhoto" (click)="onClick()" src="https://www.nosolorol.com/img/nbp/1/7/9/5/1795-large.jpg">
+      <img *ngIf="mostrarPhoto" (click)="onClick2()" src="https://i.blogs.es/8c50c2/rick-morty/840_560.jpeg">
+    </div>
+    <span *ngIf="mostrarPhoto" class="caption">Rick and Morty</span>
+  </div>
+</div>
+
+
+
+
+  
+
