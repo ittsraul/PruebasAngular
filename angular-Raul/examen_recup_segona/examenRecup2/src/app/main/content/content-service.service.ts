@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Content } from './content.interface';
+import { Character } from './character.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,11 +12,11 @@ export class ContentServiceService {
   urlRicky : string ="https://rickandmortyapi.com/api/character/?name=Rick";
   urlMorty : string ="https://rickandmortyapi.com/api/character/?name=Morty";
 
-  getRickys() : Observable<Content>{
-    return this.http.get<Content>(this.urlRicky);
+  getRickys() : Observable<Character>{
+    return this.http.get<Character>(this.urlRicky);
   }
 
-  getMortis() :Observable<Content>{
-    return this.http.get<Content>(this.urlMorty);
+  getMortis() :Observable<Character>{
+    return this.http.get<Character>(this.urlMorty);
   }
 }

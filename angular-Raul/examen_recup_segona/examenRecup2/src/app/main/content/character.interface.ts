@@ -1,13 +1,13 @@
 // To parse this data:
 //
-//   import { Convert, Content } from "./file";
+//   import { Convert, Character } from "./file";
 //
-//   const content = Convert.toContent(json);
+//   const character = Convert.toCharacter(json);
 //
 // These functions will throw an error if the JSON doesn't
 // match the expected interface, even if the JSON is valid.
 
-export interface Content {
+export interface Character {
     info:    Info;
     results: Result[];
 }
@@ -24,7 +24,7 @@ export interface Result {
     name:     string;
     status:   Status;
     species:  Species;
-    type:     Type;
+    type:     string;
     gender:   Gender;
     origin:   Location;
     location: Location;
@@ -35,7 +35,9 @@ export interface Result {
 }
 
 export enum Gender {
+    Female = "Female",
     Male = "Male",
+    Unknown = "unknown",
 }
 
 export interface Location {
@@ -45,9 +47,7 @@ export interface Location {
 
 export enum Species {
     Alien = "Alien",
-    Cronenberg = "Cronenberg",
     Human = "Human",
-    Humanoid = "Humanoid",
 }
 
 export enum Status {
@@ -56,22 +56,15 @@ export enum Status {
     Unknown = "unknown",
 }
 
-export enum Type {
-    Empty = "",
-    FishPerson = "Fish-Person",
-    HumanWithAntennae = "Human with antennae",
-    Robot = "Robot",
-}
-
 // Converts JSON strings to/from your types
 // and asserts the results of JSON.parse at runtime
 export class Convert {
-    public static toContent(json: string): Content {
-        return cast(JSON.parse(json), r("Content"));
+    public static toCharacter(json: string): Character {
+        return cast(JSON.parse(json), r("Character"));
     }
 
-    public static contentToJson(value: Content): string {
-        return JSON.stringify(uncast(value, r("Content")), null, 2);
+    public static characterToJson(value: Character): string {
+        return JSON.stringify(uncast(value, r("Character")), null, 2);
     }
 }
 
@@ -228,7 +221,7 @@ function r(name: string) {
 }
 
 const typeMap: any = {
-    "Content": o([
+    "Character": o([
         { json: "info", js: "info", typ: r("Info") },
         { json: "results", js: "results", typ: a(r("Result")) },
     ], false),
@@ -243,7 +236,7 @@ const typeMap: any = {
         { json: "name", js: "name", typ: "" },
         { json: "status", js: "status", typ: r("Status") },
         { json: "species", js: "species", typ: r("Species") },
-        { json: "type", js: "type", typ: r("Type") },
+        { json: "type", js: "type", typ: "" },
         { json: "gender", js: "gender", typ: r("Gender") },
         { json: "origin", js: "origin", typ: r("Location") },
         { json: "location", js: "location", typ: r("Location") },
@@ -257,23 +250,17 @@ const typeMap: any = {
         { json: "url", js: "url", typ: "" },
     ], false),
     "Gender": [
+        "Female",
         "Male",
+        "unknown",
     ],
     "Species": [
         "Alien",
-        "Cronenberg",
         "Human",
-        "Humanoid",
     ],
     "Status": [
         "Alive",
         "Dead",
         "unknown",
-    ],
-    "Type": [
-        "",
-        "Fish-Person",
-        "Human with antennae",
-        "Robot",
     ],
 };

@@ -106,8 +106,6 @@ export class ContentComponent {
   public getCharacter2(): void {
     this.service.getCharacter2().subscribe((response) => {
       this.resp = response.results;
-
-
     });
   }
 

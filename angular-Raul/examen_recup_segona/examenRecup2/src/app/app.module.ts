@@ -10,6 +10,8 @@ import { ContentComponent } from './main/content/content.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { ViewOneComponent } from './views/view-one/view-one.component';
 import { ViewTwoComponent } from './views/view-two/view-two.component';
+import { ContentPokComponent } from './main/content-pok/content-pok.component';
+import { ContentChuckComponent } from './main/content-chuck/content-chuck.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ViewTwoComponent } from './views/view-two/view-two.component';
     ContentComponent,
     HeaderComponent,
     ViewOneComponent,
-    ViewTwoComponent
+    ViewTwoComponent,
+    ContentPokComponent,
+    ContentChuckComponent
   ],
   imports: [
     BrowserModule,
