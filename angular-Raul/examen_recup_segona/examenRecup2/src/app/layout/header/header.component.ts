@@ -34,7 +34,12 @@ export class HeaderComponent {
         this.title = "Vista 1";
         this.ruta.navigate(['viewOne']);
         break;
-      default:
+      case "viewThree":
+        this.change = !this.change;
+        this.title = "Vista 3";
+        this.ruta.navigate(['viewThree']);
+        break;
+        default:
         break;
     }
   }

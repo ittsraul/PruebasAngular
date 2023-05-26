@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+import { MatCardModule } from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './layout/footer/footer.component';
@@ -12,6 +12,8 @@ import { ViewOneComponent } from './views/view-one/view-one.component';
 import { ViewTwoComponent } from './views/view-two/view-two.component';
 import { ContentPokComponent } from './main/content-pok/content-pok.component';
 import { ContentChuckComponent } from './main/content-chuck/content-chuck.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ViewThreeComponent } from './views/view-three/view-three.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,16 @@ import { ContentChuckComponent } from './main/content-chuck/content-chuck.compon
     ViewOneComponent,
     ViewTwoComponent,
     ContentPokComponent,
-    ContentChuckComponent
+    ContentChuckComponent,
+    ViewThreeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -68,3 +68,20 @@
  
    <div class="content"></div>
  </ng-template>
+
+ <div *ngIf="change; then bloque3"></div>
+ <ng-template #bloque3>
+  <div class="navigation">
+    <form method="post" action="#" (ngSubmit)="changeViews()">
+      <input type="text" name="Name" [(ngModel)]="name" />
+    </form>
+  </div>
+
+  <div class="banner" [ngStyle]="{'background-image' : 'url(https://pixabay.com/es/photos/gato-de-bengala-gato-mascota-animal-8012976/)'}">
+    <div class="banner-text">
+      <h2 (click)="changeViews()">{{ title }}</h2>
+    </div>
+  </div>
+
+  <div class="content"></div>
+</ng-template>
