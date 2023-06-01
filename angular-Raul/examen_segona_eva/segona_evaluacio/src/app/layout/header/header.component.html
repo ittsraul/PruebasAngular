@@ -1,47 +1,31 @@
-<!-- <div class="navigation" *ngIf="numVista !== '2'; else navigationDos">
-    <div>
-      <ul>
-        <li><a class="nav-link" [routerLink]="['/one']" (click)="changeView('/one')">Vista 1</a></li>
-        <li><a class="nav-link" [routerLink]="['/two']" (click)="changeView('/two')">Vista 2</a></li>
-      </ul>
-    </div>
-    <div class="banner">
-      <div class="banner-text">
-        <h2>Vista 1</h2>
-      </div>
-    </div>
+<div class="navigation" *ngIf="change; then navigationOne else navigationDos"></div>
+
+<ng-template #navigationOne>
+  <div>
+    <ul>
+      <li><a class="nav-link" [routerLink]="['/one']" (click)="changeView('Vista 1')">Vista 1</a></li>
+      <li><a class="nav-link" [routerLink]="['/two']" (click)="changeView('Vista 2')">Vista 2</a></li>
+    </ul>
   </div>
-  
-  <ng-template #navigationDos>
-    <div>
-      <ul>
-        <li><a class="nav-link" [routerLink]="['/one']" (click)="changeView('/one')">Vista 1</a></li>
-        <li><a class="nav-link" [routerLink]="['/two']" (click)="changeView('/two')">Vista 2</a></li>
-      </ul>
-    </div>
-    <div class="banner" [ngStyle]="{ 'background-image': 'url(https://cdn.pixabay.com/photo/2016/03/27/07/26/darth-vader-1282288_640.jpg)' }">
-      <div class="banner-text">
-        <h2>Vista 2</h2>
-      </div>
-    </div>
-  </ng-template>
-  
-
-  <div class="content">
-  </div> -->
-
-<!--   <div class="navigation" >
-    <div>
-      <ul>
-        <li><a class="nav-link" [routerLink]="['/one']" (click)="changeView('/one')">Vista 1</a></li>
-        <li><a class="nav-link" [routerLink]="['/two']" (click)="changeView('/two')">Vista 2</a></li>
-      </ul>
-    </div>
-    <div [ngClass]="{'banner-one': currentView === 'one', 'banner-two': currentView === 'two'}" class="banner">
+  <div class="banner">
     <div class="banner-text">
-      <h2>{{ currentView | uppercase }}</h2>
+      <h2>{{title}}</h2>
     </div>
   </div>
-  </div> -->
+</ng-template>
 
-  
+<ng-template #navigationDos>
+  <div>
+    <ul>
+      <li><a class="nav-link" [routerLink]="['/one']" (click)="changeView('Vista 1')">Vista 1</a></li>
+      <li><a class="nav-link" [routerLink]="['/two']" (click)="changeView('Vista 2')">Vista 2</a></li>
+    </ul>
+  </div>
+  <div class="banner-two" [ngStyle]="{ 'background-image': 'url(https://cdn.pixabay.com/photo/2016/03/27/07/26/darth-vader-1282288_640.jpg)' }">
+    <div class="banner-text">
+      <h2>{{title}}</h2>
+    </div>
+  </div>
+</ng-template>
+
+<div class="content"></div>

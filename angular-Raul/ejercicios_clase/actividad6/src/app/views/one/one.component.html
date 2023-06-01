@@ -1,0 +1,16 @@
+<h2>Profile Github</h2>
+
+<form (ngSubmit)="QueryResults()">
+    <label>Introduzca el usuario que quiere consultar : </label>
+    <input type="text" value="" id="" name="profile" [(ngModel)]="username" >
+</form>
+
+
+    <mat-card class="example-card" *ngFor="let item of profiles">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{ item.login }}</mat-card-title>
+            <mat-card-subtitle>{{ item.type }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="item.avatar_url" alt="Profile Image">
+    </mat-card>

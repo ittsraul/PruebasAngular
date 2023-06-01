@@ -20,6 +20,7 @@ export class ViewOneComponent {
       imageUrl: 'https://lumiere-a.akamaihd.net/v1/images/starwars_e58d682b.png',
       caption: 'Grupo Tres',
     },
+    
   ];
 
   currentGroupIndex: number = 0;
