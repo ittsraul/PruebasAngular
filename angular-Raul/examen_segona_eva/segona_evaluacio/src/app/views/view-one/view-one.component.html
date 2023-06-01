@@ -1,17 +1,1 @@
-<div>
-    <app-content [imageUrl]="" [caption]="'Grupo Uno'">
-
-    </app-content>
-  </div>
-  
-  <div>
-    <app-content [imageUrl]="" [caption]="'Grupo Dos'">
-
-    </app-content>
-  </div>
-  
-  <div>
-    <app-content [imageUrl]="" [caption]="'Grupo Tres'">
-
-    </app-content>
-  </div>
+<app-content [images]="[one, two, three]" (previousClick)="previousImage()" (nextClick)="nextImage()"></app-content>
