@@ -1,9 +1,6 @@
-<div class="content">
-    <!--
-        
-    <app-content [type]="one" (interfaz)="getInterfaz(event)" [image]="image" [text]="text" [clase]="clase"></app-content>
-    <app-content [type]="one" (interfaz)="getInterfaz2(event)" [image]="image" [text]="text" [clase]="clase"></app-content> 
-
-    -->
-    Buenas
-</div>
+<div class="content" *ngFor="let element of contents"> 
+    <div *ngFor="let elements of element">
+        <app-content (photo)="onPhoto($event)" [images]="elements.images" [caption]="elements.caption" [class]="elements.class"></app-content>  
+    </div>
+</div>    
+    

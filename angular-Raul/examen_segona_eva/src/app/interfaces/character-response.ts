@@ -1,62 +1,47 @@
+// To parse this data:
+//
+//   import { Convert, CharacterResponse } from "./file";
+//
+//   const characterResponse = Convert.toCharacterResponse(json);
+//
+// These functions will throw an error if the JSON doesn't
+// match the expected interface, even if the JSON is valid.
 
-export interface Character {
-    info:    Info;
-    results: Result[];
-}
-
-export interface Info {
-    count: number;
-    pages: number;
-    next:  string;
-    prev:  null;
+export interface CharacterResponse {
+    count:    number;
+    next:     null;
+    previous: null;
+    results:  Result[];
 }
 
 export interface Result {
-    id:       number;
-    name:     string;
-    status:   Status;
-    species:  Species;
-    type:     string;
-    gender:   Gender;
-    origin:   Location;
-    location: Location;
-    image:    string;
-    episode:  string[];
-    url:      string;
-    created:  Date;
-}
-
-export enum Gender {
-    Female = "Female",
-    Male = "Male",
-    Unknown = "unknown",
-}
-
-export interface Location {
-    name: string;
-    url:  string;
-}
-
-export enum Species {
-    Alien = "Alien",
-    Human = "Human",
-}
-
-export enum Status {
-    Alive = "Alive",
-    Dead = "Dead",
-    Unknown = "unknown",
+    name:       string;
+    height:     string;
+    mass:       string;
+    hair_color: string;
+    skin_color: string;
+    eye_color:  string;
+    birth_year: string;
+    gender:     string;
+    homeworld:  string;
+    films:      string[];
+    species:    string[];
+    vehicles:   string[];
+    starships:  string[];
+    created:    Date;
+    edited:     Date;
+    url:        string;
 }
 
 // Converts JSON strings to/from your types
 // and asserts the results of JSON.parse at runtime
 export class Convert {
-    public static toCharacter(json: string): Character {
-        return cast(JSON.parse(json), r("Character"));
+    public static toCharacterResponse(json: string): CharacterResponse {
+        return cast(JSON.parse(json), r("CharacterResponse"));
     }
 
-    public static characterToJson(value: Character): string {
-        return JSON.stringify(uncast(value, r("Character")), null, 2);
+    public static characterResponseToJson(value: CharacterResponse): string {
+        return JSON.stringify(uncast(value, r("CharacterResponse")), null, 2);
     }
 }
 
@@ -213,46 +198,28 @@ function r(name: string) {
 }
 
 const typeMap: any = {
-    "Character": o([
-        { json: "info", js: "info", typ: r("Info") },
+    "CharacterResponse": o([
+        { json: "count", js: "count", typ: 0 },
+        { json: "next", js: "next", typ: null },
+        { json: "previous", js: "previous", typ: null },
         { json: "results", js: "results", typ: a(r("Result")) },
     ], false),
-    "Info": o([
-        { json: "count", js: "count", typ: 0 },
-        { json: "pages", js: "pages", typ: 0 },
-        { json: "next", js: "next", typ: "" },
-        { json: "prev", js: "prev", typ: null },
-    ], false),
     "Result": o([
-        { json: "id", js: "id", typ: 0 },
         { json: "name", js: "name", typ: "" },
-        { json: "status", js: "status", typ: r("Status") },
-        { json: "species", js: "species", typ: r("Species") },
-        { json: "type", js: "type", typ: "" },
-        { json: "gender", js: "gender", typ: r("Gender") },
-        { json: "origin", js: "origin", typ: r("Location") },
-        { json: "location", js: "location", typ: r("Location") },
-        { json: "image", js: "image", typ: "" },
-        { json: "episode", js: "episode", typ: a("") },
-        { json: "url", js: "url", typ: "" },
+        { json: "height", js: "height", typ: "" },
+        { json: "mass", js: "mass", typ: "" },
+        { json: "hair_color", js: "hair_color", typ: "" },
+        { json: "skin_color", js: "skin_color", typ: "" },
+        { json: "eye_color", js: "eye_color", typ: "" },
+        { json: "birth_year", js: "birth_year", typ: "" },
+        { json: "gender", js: "gender", typ: "" },
+        { json: "homeworld", js: "homeworld", typ: "" },
+        { json: "films", js: "films", typ: a("") },
+        { json: "species", js: "species", typ: a("") },
+        { json: "vehicles", js: "vehicles", typ: a("") },
+        { json: "starships", js: "starships", typ: a("") },
         { json: "created", js: "created", typ: Date },
-    ], false),
-    "Location": o([
-        { json: "name", js: "name", typ: "" },
+        { json: "edited", js: "edited", typ: Date },
         { json: "url", js: "url", typ: "" },
     ], false),
-    "Gender": [
-        "Female",
-        "Male",
-        "unknown",
-    ],
-    "Species": [
-        "Alien",
-        "Human",
-    ],
-    "Status": [
-        "Alive",
-        "Dead",
-        "unknown",
-    ],
 };

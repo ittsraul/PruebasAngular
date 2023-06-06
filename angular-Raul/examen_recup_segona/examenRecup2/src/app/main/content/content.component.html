@@ -1,11 +1,8 @@
 <div class="photo">
-  <div class="image-container2">
-    <div *ngFor="let item of resp">
+  <div class={{class}}>
+    <div *ngFor="let item of resp let i = index" (click)="onPhoto(1)">
       <img src="{{item.image}}" />
-      <p>{{ item.name }}</p>
     </div>
-    <img *ngIf="showImage" (click)="onClick()" src="https://www.nosolorol.com/img/nbp/1/7/9/5/1795-large.jpg">
-    <img *ngIf="showImage" (click)="onClick2()" src="https://i.blogs.es/8c50c2/rick-morty/840_560.jpeg">
+    <span class="caption">{{caption}}</span>
   </div>
-  <span *ngIf="showImage" class="caption">Rick and Morty</span>
 </div>

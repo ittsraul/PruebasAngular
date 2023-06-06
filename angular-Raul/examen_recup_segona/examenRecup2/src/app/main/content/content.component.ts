@@ -1,25 +1,26 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ContentServiceService } from './content-service.service';
-import { Character, Result } from 'src/app/main/content/character.interface';
+import { Data } from '@angular/router';
+import { Result } from './character.interface';
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent  {
-  
   constructor(private contentService: ContentServiceService) {}
-  resp: Result[] = []; 
+  resp: Result[] = [];
 
-  @Input() isImageExpanded: boolean = false;
-  @Output() toggleImageEvent = new EventEmitter<void>();
 
-  
-  showImage : boolean = true;
 
-  toggleImage() {
-    this.toggleImageEvent.emit();
+  @Input() class: string = '';
+  @Input() images: string[] = [];
+  @Input() caption: string = "";
+  @Output() photo = new EventEmitter<Data>();
+
+  public onPhoto(i: number): void{
+    let data: Data = { image: i, class: this.class, caption: this.caption};
+    this.photo.emit(data);
   }
   
   /* Parte 2*/
@@ -38,13 +39,4 @@ export class ContentComponent  {
     });
   } 
 
-  onClick() {
-    this.showImage = false;
-    this.getRickys();
-  }
-
-  onClick2() {
-    this.showImage = false;
-    this.getMortis();
-  }
 }

@@ -1,62 +1,42 @@
+// To parse this data:
+//
+//   import { Convert, StarShipResponse } from "./file";
+//
+//   const starShipResponse = Convert.toStarShipResponse(json);
+//
+// These functions will throw an error if the JSON doesn't
+// match the expected interface, even if the JSON is valid.
 
-export interface Character {
-    info:    Info;
-    results: Result[];
-}
-
-export interface Info {
-    count: number;
-    pages: number;
-    next:  string;
-    prev:  null;
-}
-
-export interface Result {
-    id:       number;
-    name:     string;
-    status:   Status;
-    species:  Species;
-    type:     string;
-    gender:   Gender;
-    origin:   Location;
-    location: Location;
-    image:    string;
-    episode:  string[];
-    url:      string;
-    created:  Date;
-}
-
-export enum Gender {
-    Female = "Female",
-    Male = "Male",
-    Unknown = "unknown",
-}
-
-export interface Location {
-    name: string;
-    url:  string;
-}
-
-export enum Species {
-    Alien = "Alien",
-    Human = "Human",
-}
-
-export enum Status {
-    Alive = "Alive",
-    Dead = "Dead",
-    Unknown = "unknown",
+export interface StarShipResponse {
+    name:                   string;
+    model:                  string;
+    manufacturer:           string;
+    cost_in_credits:        string;
+    length:                 string;
+    max_atmosphering_speed: string;
+    crew:                   string;
+    passengers:             string;
+    cargo_capacity:         string;
+    consumables:            string;
+    hyperdrive_rating:      string;
+    MGLT:                   string;
+    starship_class:         string;
+    pilots:                 any[];
+    films:                  string[];
+    created:                Date;
+    edited:                 Date;
+    url:                    string;
 }
 
 // Converts JSON strings to/from your types
 // and asserts the results of JSON.parse at runtime
 export class Convert {
-    public static toCharacter(json: string): Character {
-        return cast(JSON.parse(json), r("Character"));
+    public static toStarShipResponse(json: string): StarShipResponse {
+        return cast(JSON.parse(json), r("StarShipResponse"));
     }
 
-    public static characterToJson(value: Character): string {
-        return JSON.stringify(uncast(value, r("Character")), null, 2);
+    public static starShipResponseToJson(value: StarShipResponse): string {
+        return JSON.stringify(uncast(value, r("StarShipResponse")), null, 2);
     }
 }
 
@@ -213,46 +193,24 @@ function r(name: string) {
 }
 
 const typeMap: any = {
-    "Character": o([
-        { json: "info", js: "info", typ: r("Info") },
-        { json: "results", js: "results", typ: a(r("Result")) },
-    ], false),
-    "Info": o([
-        { json: "count", js: "count", typ: 0 },
-        { json: "pages", js: "pages", typ: 0 },
-        { json: "next", js: "next", typ: "" },
-        { json: "prev", js: "prev", typ: null },
-    ], false),
-    "Result": o([
-        { json: "id", js: "id", typ: 0 },
+    "StarShipResponse": o([
         { json: "name", js: "name", typ: "" },
-        { json: "status", js: "status", typ: r("Status") },
-        { json: "species", js: "species", typ: r("Species") },
-        { json: "type", js: "type", typ: "" },
-        { json: "gender", js: "gender", typ: r("Gender") },
-        { json: "origin", js: "origin", typ: r("Location") },
-        { json: "location", js: "location", typ: r("Location") },
-        { json: "image", js: "image", typ: "" },
-        { json: "episode", js: "episode", typ: a("") },
-        { json: "url", js: "url", typ: "" },
+        { json: "model", js: "model", typ: "" },
+        { json: "manufacturer", js: "manufacturer", typ: "" },
+        { json: "cost_in_credits", js: "cost_in_credits", typ: "" },
+        { json: "length", js: "length", typ: "" },
+        { json: "max_atmosphering_speed", js: "max_atmosphering_speed", typ: "" },
+        { json: "crew", js: "crew", typ: "" },
+        { json: "passengers", js: "passengers", typ: "" },
+        { json: "cargo_capacity", js: "cargo_capacity", typ: "" },
+        { json: "consumables", js: "consumables", typ: "" },
+        { json: "hyperdrive_rating", js: "hyperdrive_rating", typ: "" },
+        { json: "MGLT", js: "MGLT", typ: "" },
+        { json: "starship_class", js: "starship_class", typ: "" },
+        { json: "pilots", js: "pilots", typ: a("any") },
+        { json: "films", js: "films", typ: a("") },
         { json: "created", js: "created", typ: Date },
-    ], false),
-    "Location": o([
-        { json: "name", js: "name", typ: "" },
+        { json: "edited", js: "edited", typ: Date },
         { json: "url", js: "url", typ: "" },
     ], false),
-    "Gender": [
-        "Female",
-        "Male",
-        "unknown",
-    ],
-    "Species": [
-        "Alien",
-        "Human",
-    ],
-    "Status": [
-        "Alive",
-        "Dead",
-        "unknown",
-    ],
 };
