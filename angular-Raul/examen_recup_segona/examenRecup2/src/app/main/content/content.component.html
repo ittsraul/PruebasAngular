@@ -1,8 +1,18 @@
-<div class="photo">
-  <div class={{class}}>
-    <div *ngFor="let item of resp let i = index" (click)="onPhoto(1)">
-      <img src="{{item.image}}" />
+<div [ngSwitch]="type">
+  <div *ngSwitchCase="'one'" class="photo">
+    <div class="{{ class }}">
+      <img *ngFor="let item of image" [src]="item" (click)="changeSize($event)" />
     </div>
-    <span class="caption">{{caption}}</span>
+    <span class="caption">{{ caption }}</span>
+  </div>
+
+  <div *ngSwitchCase="'two'" class="photo">
+    <div class="image-container2">
+      <div *ngFor="let item of resp">
+        <img [src]="item.image" alt="">
+        <p>{{ item.name }}</p>
+      </div>
+    </div>
+    <span *ngIf="showImage" class="caption">Rick and Morty</span>
   </div>
 </div>

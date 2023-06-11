@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs'
+import { Observable } from 'rxjs';
 
 import { CharacterResponse } from '../interfaces/character-response';
 import { FilmResponse } from '../interfaces/film-response';

@@ -13,22 +13,4 @@ export class ContentComponent {
   @Input() clase: string = "";
   @Input() type = "";
 
-  ChangeSize(){
-
-  }
-
-  ImageHide(){
-
-
-  }
-
-  previous() {
-    this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
-    this.previousClick.emit();
-  }
-
-  next() {
-    this.currentIndex = (this.currentIndex + 1) % this.images.length;
-    this.nextClick.emit();
-  }
 }

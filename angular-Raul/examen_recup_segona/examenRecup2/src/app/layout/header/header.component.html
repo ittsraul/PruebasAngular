@@ -1,4 +1,4 @@
-<!--  <div *ngIf="change; then bloque2 else bloque1"></div>
+ <div *ngIf="change; then bloque2 else bloque1"></div>
 
  <ng-template #bloque1>
    <div class="navigation">
@@ -31,39 +31,3 @@
  
    <div class="content"></div>
  </ng-template>
-
- <div *ngIf="change; then bloque3"></div>
- <ng-template #bloque3>
-  <div class="navigation">
-    <form method="post" action="#" (ngSubmit)="changeViews()">
-      <input type="text" name="Name" [(ngModel)]="name" />
-    </form>
-  </div>
-
-  <div class="banner" [ngStyle]="{'background-image' : 'url(https://pixabay.com/es/photos/gato-de-bengala-gato-mascota-animal-8012976/)'}">
-    <div class="banner-text">
-      <h2 (click)="changeViews()">{{ title }}</h2>
-    </div>
-  </div>
-
-  <div class="content"></div>
-</ng-template> -->
-
-<!-- Another solution -->
-
-<div class="navigation">
-  <form (ngSubmit)="onSubmit()" method="post" action="">
-    <label >Introduce what are you want to go</label>
-    <input type="text" value="" id="" name="form" [(ngModel)]="formReceive">
-  </form>
-</div>
-
-<div class="banner" [ngStyle]=" {'background-image': 'url{' + data[current].image + '}'}">
-  <div class="banner-text">
-    <h2 class={{data[current].className}}>
-      <a [routerLink]="[data[current].routeName]">{{data[current].viewName}}</a>
-    </h2>
-  </div>
-</div>
-
-<div class="context"></div>

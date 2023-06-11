@@ -28,19 +28,5 @@ export class ViewOneComponent {
     clase: 'image-container3'
   }
 
-  currentGroupIndex: number = 0;
-  currentImageGroup: ImageGroup;
-
-  constructor() {
-    this.currentImageGroup = this.imageGroups[this.currentGroupIndex];
-  }
-
-  previousGroup() {
-    this.currentGroupIndex = (this.currentGroupIndex - 1 + this.imageGroups.length) % this.imageGroups.length;
-    this.currentImageGroup = this.imageGroups[this.currentGroupIndex];
-  }
-
-  previousImage(){}
-
-  nextImage(){}
+ 
 }

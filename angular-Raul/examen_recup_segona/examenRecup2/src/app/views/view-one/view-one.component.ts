@@ -1,40 +1,24 @@
 import { Component } from '@angular/core';
-import { Data } from '@angular/router';
-import { one } from 'src/app/main/content/one';
+import { One } from 'src/app/main/content/one';
 @Component({
   selector: 'app-view-one',
   templateUrl: './view-one.component.html',
   styleUrls: ['./view-one.component.css']
 })
 export class ViewoneComponent {
-  public one = [one];
-  public click: boolean = false;
+  public image: string[] = ['https://i.blogs.es/2cc78a/ordenstarwars/840_560.jpg', 'https://www.lavanguardia.com/files/image_948_465/uploads/2020/05/04/5fa922920d3b5.png'];
+  public caption: string = 'Grupo Uno';
+  public class: string = 'image-container2';
 
-  public onPhoto(obj: Data) {
-    if (obj.caption === "Grupo Uno") {
-      if (one[0].class ==="image-container") {
-        one[0] = "image-container2";
-        one[0].image = [""];
-      }else{
-        one[0].class = "image-container";
-        if (obj.image === 0) {
-          one.image = [""];
-        } else {
-          one[0].image = [""];
-        }
-      }
-    } else {
-      if (one[1].class ==="image-container") {
-        one[1] = "image-container3";
-        one[1].image = [""];
-      }else{
-        one[1].class = "image-container";
-        if (obj.image === 0) {
-          one.image = [""];
-        } else {
-          one[1].image = [""];
-        }
-      }
-    }
+  public getPhoto(first: One) {
+    this.image = first.image;
+    this.caption = first.caption;
+    this.class = first.class;
+  }
+
+  public getPhoto2(second: One) {
+    this.image = second.image;
+    this.caption = second.caption;
+    this.class = second.class;
   }
 }

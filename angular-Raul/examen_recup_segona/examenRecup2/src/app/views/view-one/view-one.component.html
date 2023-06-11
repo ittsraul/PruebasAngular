@@ -1,6 +1,16 @@
-<div class="content" *ngFor="let element of contents"> 
-    <div *ngFor="let elements of element">
-        <app-content (photo)="onPhoto($event)" [images]="elements.image" [caption]="elements.caption" [class]="elements.class"></app-content>  
-    </div>
-</div>    
-    
+<div>
+    <app-content
+      [type]="'one'"
+      (photo)="getPhoto($event)"
+      [image]="image"
+      [caption]="caption"
+      [class]="class"
+    ></app-content>
+    <app-content
+      [type]="'one'"
+      (photo)="getPhoto2($event)"
+      [image]="image"
+      [caption]="caption"
+      [class]="class"
+    ></app-content>
+  </div>

@@ -1,1 +1,11 @@
-<app-content></app-content>
+<div class="photo">
+  <div class="image-container2">
+    <div *ngFor="let item of data">
+      <img [src]="item.image" alt="">
+      <p>{{ item.name }}</p>
+    </div>
+  </div>
+  <span *ngIf="showImage" class="caption">Rick and Morty</span>
+  <button (click)="getRickys()">Mostrar personajes de Rick</button>
+  <button (click)="getMortis()">Mostrar personajes de Morty</button>
+</div>
