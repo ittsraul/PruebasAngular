@@ -7,9 +7,9 @@ import { Pokemon, Result } from './pokemon.interface';
   styleUrls: ['./content-pok.component.css']
 })
 export class ContentPokComponent implements OnInit{
- /*  poke: Result[] = [];
+  poke: Result[] = [];
   number :number = 0;
-  constructor(protected pokemon :PokemonService){}
+  constructor(public pokemon :PokemonService){}
 
   ngOnInit(): void {
       this.GetAllPokemons();
@@ -33,6 +33,6 @@ export class ContentPokComponent implements OnInit{
       this.poke = response.results;
        console.log(response); 
     });
-  } */
+  } 
 
 }

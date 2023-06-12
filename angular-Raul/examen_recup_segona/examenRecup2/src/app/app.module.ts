@@ -9,10 +9,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { ContentComponent } from './main/content/content.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { ViewTwoComponent } from './views/view-two/view-two.component';
-import { ContentPokComponent } from '../../../../ejercicios_clase/actividadesPracticas/src/app/content-pok/content-pok.component';
-import { ContentChuckComponent } from '../../../../ejercicios_clase/actividadesPracticas/src/app/content-chuck/content-chuck.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ViewThreeComponent } from '../../../../ejercicios_clase/actividadesPracticas/src/app/view-three/view-three.component';
 import { ViewoneComponent } from './views/view-one/view-one.component';
 
 @NgModule({
@@ -23,9 +20,6 @@ import { ViewoneComponent } from './views/view-one/view-one.component';
     HeaderComponent,
     ViewTwoComponent,
     ViewoneComponent,
-    ContentPokComponent,
-    ContentChuckComponent,
-    ViewThreeComponent
   ],
   imports: [
     BrowserModule,

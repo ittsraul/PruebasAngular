@@ -1,4 +1,4 @@
-/* import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { ContentPokComponent } from './content-pok.component';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -33,4 +33,4 @@ export class PokemonService {
  
 
 }
- */
+ 
