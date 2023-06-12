@@ -30,6 +30,7 @@ export class ContentComponent  {
   @Output() photo2 = new EventEmitter<One>();
 
   public showImage: boolean = true;
+  public imgSet :number = 1;
   public isBig: boolean = false;
   public originalWidth: string = '';
 
@@ -41,62 +42,55 @@ export class ContentComponent  {
     if (this.image.length >= 1) {
       const image: HTMLImageElement = event.target as HTMLImageElement;
       if (!this.isBig) {
-        this.hideOtherImages(image);
+        this.hideImages(image);
         this.originalWidth = image.style.width;
         image.style.width = '300px';
         this.isBig = true;
       } else {
         const parent: HTMLElement = image.parentElement!;
         const children = parent.getElementsByTagName('img');
+        let numImg: Number = 0;
         for (let i = 0; i < children.length; i++) {
+          if (image === children[i]) {
+            numImg = i + 1;
+            children[i].style.width = this.originalWidth;
+          }
           children[i].style.display = 'inline-block';
-          children[i].style.width = this.originalWidth;
         }
         this.isBig = false;
       }
     }
   }
 
-  public hideOtherImages(image: HTMLImageElement) {
+  public hideImages(image: HTMLImageElement) {
     const parent: HTMLElement = image.parentElement!;
     const children = parent.getElementsByTagName('img');
 
     for (let i = 0; i < children.length; i++) {
-      if (image !== children[i]) {
+      if (image === children[i]) {
+        
+      }else{
         children[i].style.display = 'none';
       }
     }
   }
 
-  public emitInterfaces() {
-    if (this.type === 'one') {
-      this.photo.emit({
-        image: this.image,
-        class: this.class,
-        caption: this.caption
-      });
-    } else if (this.type === 'two') {
-      this.photo2.emit({
-        image: this.image,
-        class: this.class,
-        caption: this.caption
-      });
+  emitInterfaces() {
+    if (this.imgSet === 1) {
+      this.photo.emit(this.one)
+    } else if (this.imgSet === 2 ) {
+      this.photo2.emit(this.two)
     }
   }
 
   public ngOnInit() {
     if (this.image.length > 1 && !this.isBig) {
-      this.image.push(this.image.shift()!);
+      this.imgSet++;
     } else if (this.image.length === 2 && !this.isBig) {
-      this.image.unshift(this.image.pop()!);
+      this.imgSet--;
     }
+    this.emitInterfaces();
   }
 
-  public onClick() {
-    this.showImage = false;
-  }
-
-  public onClick2() {
-    this.showImage = false;
-  }
+ 
 }

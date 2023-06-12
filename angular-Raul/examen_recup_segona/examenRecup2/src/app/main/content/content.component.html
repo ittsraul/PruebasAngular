@@ -1,10 +1,10 @@
 <div [ngSwitch]="type">
-  <div *ngSwitchCase="'one'" class="photo">
-    <div class="{{ class }}">
-      <img *ngFor="let item of image" [src]="item" (click)="changeSize($event)" />
+  <div *ngSwitchCase='"one"' class="photo">
+    <div class="{{class}}">
+        <img *ngFor = "let item of image" (click)="changeSize($event)"src="{{item}}">
     </div>
     <span class="caption">{{ caption }}</span>
-  </div>
+</div>
 
   <div *ngSwitchCase="'two'" class="photo">
     <div class="image-container2">

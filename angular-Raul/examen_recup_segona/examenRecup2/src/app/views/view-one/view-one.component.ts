@@ -6,10 +6,11 @@ import { One } from 'src/app/main/content/one';
   styleUrls: ['./view-one.component.css']
 })
 export class ViewoneComponent {
-  public image: string[] = ['https://i.blogs.es/2cc78a/ordenstarwars/840_560.jpg', 'https://www.lavanguardia.com/files/image_948_465/uploads/2020/05/04/5fa922920d3b5.png'];
-  public caption: string = 'Grupo Uno';
-  public class: string = 'image-container2';
+  public image: string[] = [''];
+  public caption: string = '';
+  public class: string = '';
 
+  public one: string = "one"
   public getPhoto(first: One) {
     this.image = first.image;
     this.caption = first.caption;
