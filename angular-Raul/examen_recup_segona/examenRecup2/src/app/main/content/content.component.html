@@ -9,8 +9,8 @@
   <div *ngSwitchCase="'two'" class="photo">
     <div class="image-container2">
       <div *ngFor="let item of resp">
-        <img [src]="item.image" alt="">
-        <p>{{ item.name }}</p>
+        <img [src]="item" alt="">
+        <p>{{ item}}</p>
       </div>
     </div>
     <span *ngIf="showImage" class="caption">Rick and Morty</span>

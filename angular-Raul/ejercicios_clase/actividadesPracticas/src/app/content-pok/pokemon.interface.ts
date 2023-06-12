@@ -1,4 +1,4 @@
-
+/* 
 export interface Pokemon {
     count:    number;
     next:     string;
@@ -185,3 +185,4 @@ const typeMap: any = {
         { json: "url", js: "url", typ: "" },
     ], false),
 };
+ */

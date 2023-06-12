@@ -7,7 +7,7 @@ import { Pokemon, Result } from './pokemon.interface';
   styleUrls: ['./content-pok.component.css']
 })
 export class ContentPokComponent implements OnInit{
-  poke: Result[] = [];
+ /*  poke: Result[] = [];
   number :number = 0;
   constructor(protected pokemon :PokemonService){}
 
@@ -31,8 +31,8 @@ export class ContentPokComponent implements OnInit{
   GetAllPokemons(){
     this.pokemon.getPokemons().subscribe((response)=>{
       this.poke = response.results;
-      /* console.log(response); */
+       console.log(response); 
     });
-  }
+  } */
 
 }

@@ -1,4 +1,4 @@
-export interface RandomJoke {
+/* export interface RandomJoke {
   categories: any[];
   created_at: Date;
   icon_url: string;
@@ -214,3 +214,4 @@ const typeMap: any = {
     false
   ),
 };
+ */

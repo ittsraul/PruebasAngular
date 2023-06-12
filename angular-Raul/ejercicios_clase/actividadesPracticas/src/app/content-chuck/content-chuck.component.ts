@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/* import { Component, OnInit } from '@angular/core';
 import { RandomJoke } from './chuckRandom.interface';
 import { ChuckService } from './chuck.service';
 
@@ -22,3 +22,4 @@ export class ContentChuckComponent implements OnInit {
     });
   }
 }
+ */
