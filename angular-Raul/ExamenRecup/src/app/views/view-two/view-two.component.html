@@ -1,0 +1,17 @@
+<div style="display: flex; align-items: center; justify-content: center">
+    <form method="post" action="#" (ngSubmit)="searchResults()">
+      <div class="answer-bank">
+        <div class="answer">
+          <input type="text" name="name" id="name" value="" [ngModel]="name" placeholder="type" />
+        </div>
+        <div class="answer">
+          <input type="submit" value="Enviar" class="primary" />
+        </div>
+      </div>
+    </form>
+</div>
+
+<div *ngFor="let item of character">
+  {{ item.name }} , {{ item.height}} , {{ item.mass}}, {{item.hair_color}}, {{ item.skin_color}}
+</div>
+

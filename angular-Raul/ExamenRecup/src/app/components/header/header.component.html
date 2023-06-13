@@ -1,0 +1,25 @@
+  <!-- Componente Header -->
+  <div class="navigation" >
+    <ul>
+      <a class="nav-link {{class}}" (click)="Anterior()">Anterior</a>
+      <a class="nav-link {{class}}" (click)="Siguiente()">Siguiente</a>
+    </ul>
+    <ul>
+      <a class="nav-link" (click)="navigate1()" >Vista 1</a>
+      <a class="nav-link" (click)="navigate2()">Vista 2</a>
+      <a class="nav-link" (click)="navigate3()">Vista 3</a>
+    </ul>
+  </div>
+
+ 
+    <div class="banner" [ngStyle]="{'background' : background}">
+    <div class="banner-text" >
+      <h2>{{header}}</h2>
+    </div>
+  </div>
+
+  
+
+  <div class="content">
+  </div>
+
